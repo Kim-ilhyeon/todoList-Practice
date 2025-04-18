@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>todoList</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+    <style>
+        .container {
+            display: block;
+            justify-items: center;
+        }
+        .mainTitle {
+            border: solid 2px black;
+            width: 100%;
+            justify-items: center;
+            margin-bottom: 4rem;
+        }
+
+        .todoListArea {
+            border: solid 2px yellowgreen;
+            display: flex;
+            width: 90%;
+            height: 50rem;
+        }
+
+        .menu {
+            border: solid 2px orange;
+            width: 15rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+        }
+
+        .content {
+            border: solid 2px red;
+            width: 92rem;
+        }
+
+        .menu div {
+            border: solid 1px rgb(84, 12, 117);
+            height: 8rem;
+            align-content: center;
+            text-align: center;
+            font-size: 1.7rem;
+            font-weight: bold;
+            color: plum;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="root">
+        <div class="container">
+            <div th:insert="~{common/header :: header}">
+
+            </div>
+            <div class="todoListArea">
+                <div class="menu">
+                    <div class="calendar">
+                        달력
+                    </div>
+                    <div class="listDetail">
+                        세부사항
+                    </div>
+                    <div class="today">
+                        오늘 할 일
+                    </div>
+                    <div class="tomorrow">
+                        내일 할 일
+                    </div>
+                    <div class="inComplete">
+                        미완료 목록
+                    </div>
+                    <div class="mypage">
+                        마이페이지
+                    </div>
+                </div>
+                <div class="content" th:insert="~{todoList/calendarPage :: calendar}">
+                    내용
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
